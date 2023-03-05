@@ -1,0 +1,23 @@
+dataset: "full" #50, 50_100, 100 or full
+bert_model: "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext" #"emilyalsentzer/Bio_ClinicalBERT" "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext" "emilyalsentzer/Bio_Discharge_Summary_BERT"
+model: "HiBERT" #PLM-ICD or HiBERT
+n_heads: 2 #For HiBERT
+transformer_encoder_num_layers: 2 #For HiBERT
+decoder: "lan" #For HiBERT: fcn or lan or pseudo_wise_attention
+model_type: "BERT" #For PLM-ICD: it can be BERT or RoBERTa
+model_mode: "laat-split" #For PLM-ICD: "cls-sum", "cls-max", "laat", "laat-split"
+n_tokens: 2500 #2500 for HiBERT, 3072 for PLM-ICD
+chunk_size: 512 #512 for HiBERT, for PLM-ICD 128 or 256 are recommended
+epochs: 60
+optimizer: "AdamW"
+weighted_loss: True #Weight loss based on code frequencies
+scheduler: "LinearWarmup"
+warm_up_epochs: 30
+lr: 0.00001
+weight_decay: 0.01
+n_accumulate: 1
+criterion: "f1_macro"
+train_batch_size: 8
+val_batch_size: 16
+device: "cuda:0" #check with !nvidia-smi which gpu is free and assign the number
+seed: 42
