@@ -52,7 +52,7 @@ python train.py
 
 ## Description and Results
 
-![network architecture](https://i.imgur.com/VTAkpjh.png)
+![network architecture](https://i.imgur.com/GSmi3an.png)
 
 ## Weights & Biases
 The training progress can be visualized in real-time using [Weights & Biases](https://wandb.ai/). Training and validation loss curves are logged to the platform.
