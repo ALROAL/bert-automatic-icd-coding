@@ -1,0 +1,8 @@
+/wandb
+*.ipynb
+**/__pycache__
+*.csv
+*.pth
+*.yaml
+*.xlsx
+*.txt
